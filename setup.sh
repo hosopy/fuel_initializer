@@ -1,13 +1,10 @@
 #! /bin/sh
 
-if [ $# -ne 1 ]; then
-  echo "Invalid number of arguments." 1>&2
-  echo "Usage: setup.sh PROJECT_NAME"
-  exit 1
-fi
+echo "What is project name? : "
+read project_name
 
-oil create $1
-cd $1
+oil create $project_name
+cd $project_name
 
 rm -rf .git .gitmodules *.md docs fuel/core fuel/packages
 
